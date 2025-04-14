@@ -7,7 +7,11 @@ import express from 'express';
 import routes from './routes/index.js';
 import { sequelize } from './models/index.js';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { Request, Response } from 'express';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
